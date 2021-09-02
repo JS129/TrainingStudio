@@ -1,0 +1,33 @@
+﻿@model TrainingStudio.Models.Classes
+
+@{ ViewData["Title"] = "Create"; }
+@{ Layout = "_Layout2"; }
+<br />
+<h1>Add New Classes</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12 font-weight-bold">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+            <div class="form-group">
+                <label asp-for="TrainingType" class="control-label"></label>
+                <input asp-for="TrainingType" class="form-control" placeholder="Enter Training Type" />
+                <span asp-validation-for="TrainingType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time" class="control-label"></label>
+                <input asp-for="Time" class="form-control" placeholder="Enter Classes No" />
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" placeholder="Enter Price" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" type="button" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>

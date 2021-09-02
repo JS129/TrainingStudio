@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TrainingStudio.Models.Schedules>
+
+@{ ViewData["Title"] = "Home"; }
+@{
+    Layout = "_Layout";
+}
+<p>
+    <a asp-action="Create" type="button" class="btn btn-secondary">Schedule a Class</a>
+</p>
+<table class="table table-dark table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfPersons)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Contact)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NumberOfPersons)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StartDate)
+    </td>
+    <td>
+        <a asp-action="Edit" type="button" class="btn btn-secondary" asp-route-id="@item.Id">Edit</a>
+        <a asp-action="Details" type="button" class="btn btn-secondary" asp-route-id="@item.Id">Details</a>
+        <a asp-action="Delete" type="button" class="btn btn-secondary" asp-route-id="@item.Id">Delete</a>
+    </td>
+</tr>}
+    </tbody>
+</table>
